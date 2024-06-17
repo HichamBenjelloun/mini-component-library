@@ -27,7 +27,6 @@ const StyledProgressBar = styled.div`
     border-radius: 4px 0 0 4px;
     background-color: ${COLORS.primary};
     height: 100%;
-    width: 4px;
 
     ${({ value }) =>
       value >= 99.8 &&
