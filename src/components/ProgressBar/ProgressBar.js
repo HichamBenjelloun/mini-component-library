@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
-import { COLORS } from "../../constants";
+import { COLORS } from '../../constants';
 
 const sizeStyles = {
   small: css`
