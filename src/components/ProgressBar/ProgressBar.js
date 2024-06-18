@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
-  ${(props) => sizeStyles[props.size]}
+  ${({ size }) => sizeStyles[size]}
 `;
 
 const Bar = styled.div`
@@ -32,7 +32,8 @@ const Bar = styled.div`
   background-color: ${COLORS.primary};
   height: 100%;
 
-  ${({ value }) =>
+  ${({ size, value }) =>
+    size === 'large' &&
     value >= 99.8 &&
     css`
       border-radius: 4px;
@@ -44,7 +45,6 @@ const ProgressBar = ({ value, size }) => {
     <Wrapper
       role="progressbar"
       size={size}
-      value={value}
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={value}
@@ -54,6 +54,7 @@ const ProgressBar = ({ value, size }) => {
       <Bar
         role="presentation"
         style={{ width: `${value}%` }}
+        size={size}
         value={value}
       ></Bar>
     </Wrapper>
