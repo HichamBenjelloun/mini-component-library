@@ -3,6 +3,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { COLORS } from '../../constants';
+import VisuallyHidden from '../VisuallyHidden';
 
 const sizeStyles = {
   small: css`
@@ -17,30 +18,30 @@ const sizeStyles = {
   `,
 };
 
-const StyledProgressBar = styled.div`
+const Wrapper = styled.div`
   background-color: ${COLORS.transparentGray15};
   box-shadow: inset 0 2px 4px ${COLORS.transparentGray35};
   border-radius: 8px;
-
-  & > div {
-    position: relative;
-    border-radius: 4px 0 0 4px;
-    background-color: ${COLORS.primary};
-    height: 100%;
-
-    ${({ value }) =>
-      value >= 99.8 &&
-      css`
-        border-radius: 4px;
-      `}
-  }
+  overflow: hidden;
 
   ${(props) => sizeStyles[props.size]}
 `;
 
+const Bar = styled.div`
+  border-radius: 4px 0 0 4px;
+  background-color: ${COLORS.primary};
+  height: 100%;
+
+  ${({ value }) =>
+    value >= 99.8 &&
+    css`
+      border-radius: 4px;
+    `}
+`;
+
 const ProgressBar = ({ value, size }) => {
   return (
-    <StyledProgressBar
+    <Wrapper
       role="progressbar"
       size={size}
       value={value}
@@ -49,8 +50,13 @@ const ProgressBar = ({ value, size }) => {
       aria-valuenow={value}
       max={100}
     >
-      <div role="presentation" style={{ width: `${value}%` }}></div>
-    </StyledProgressBar>
+      <VisuallyHidden>{value}%</VisuallyHidden>
+      <Bar
+        role="presentation"
+        style={{ width: `${value}%` }}
+        value={value}
+      ></Bar>
+    </Wrapper>
   );
 };
 
