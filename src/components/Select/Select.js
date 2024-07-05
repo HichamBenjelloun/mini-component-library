@@ -25,9 +25,8 @@ const Wrapper = styled.div`
     }
 `;
 
-const IconContainer = styled.div`
-    display: inline-block;
-    height: 100%;
+const IconContainer = styled.span`
+    pointer-events: none;
 
     & > svg {
         position: absolute;
@@ -36,8 +35,6 @@ const IconContainer = styled.div`
         right: 12px;
         margin: auto;
     }
-
-    pointer-events: none;
 `;
 
 const Select = ({ label, value, onChange, children }) => {
