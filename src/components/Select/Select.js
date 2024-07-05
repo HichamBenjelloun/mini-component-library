@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import { COLORS } from '../../constants';
 import { ChevronDown } from 'react-feather';
-import { getDisplayedValue } from './Select.helpers';
 
 const StyledSelect = styled.select`
     appearance: none;
@@ -25,7 +24,7 @@ const Wrapper = styled.div`
     }
 `;
 
-const IconContainer = styled.span`
+const IconWrapper = styled.div`
     pointer-events: none;
 
     & > svg {
@@ -38,16 +37,14 @@ const IconContainer = styled.span`
 `;
 
 const Select = ({ label, value, onChange, children }) => {
-  const displayedValue = getDisplayedValue(value, children);
-
   return (
     <Wrapper>
       <StyledSelect value={value} onChange={onChange}>
         {children}
       </StyledSelect>
-      <IconContainer>
+      <IconWrapper>
         <ChevronDown size={24} />
-      </IconContainer>
+      </IconWrapper>
     </Wrapper>
   );
 };
