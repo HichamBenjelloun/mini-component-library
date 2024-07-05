@@ -16,7 +16,8 @@ const StyledSelect = styled.select`
 
 
 const Wrapper = styled.div`
-    position: absolute;
+    position: relative;
+    width: max-content;
     color: ${COLORS.gray700};
 
     &:hover {
