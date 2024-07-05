@@ -26,13 +26,16 @@ const Wrapper = styled.div`
 `;
 
 const IconContainer = styled.div`
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 12px;
+    display: inline-block;
+    height: 100%;
 
-    display: flex;
-    align-items: center;
+    & > svg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 12px;
+        margin: auto;
+    }
 
     pointer-events: none;
 `;
