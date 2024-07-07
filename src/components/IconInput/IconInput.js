@@ -29,12 +29,17 @@ const Wrapper = styled.label`
   position: relative;
   font-size: ${(props) => variants[props.size].fontSize};
 
+  color: ${COLORS.gray700};
+  &:hover {
+    color: black;
+  }
+
   svg {
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto;
-    color: ${COLORS.gray700};
+    color: inherit;
     width: ${(props) => variants[props.size].iconSize};
   }
 
@@ -55,11 +60,7 @@ const Wrapper = styled.label`
     font-size: inherit;
     font-weight: 700;
 
-    color: ${COLORS.gray700};
-
-    &:hover {
-      color: black;
-    }
+    color: inherit;
 
     &::placeholder {
       font-size: inherit;
