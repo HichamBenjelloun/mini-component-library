@@ -65,9 +65,6 @@ const Wrapper = styled.label`
       font-size: inherit;
       font-weight: 400;
       color: ${COLORS.gray500};
-    }
-
-    &::-moz-placeholder {
       opacity: 1;
     }
   }
