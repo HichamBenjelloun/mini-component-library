@@ -46,16 +46,20 @@ const Wrapper = styled.label`
       `}
 
     border: none;
-    outline: none;
+    outline-offset: 2px;
+
+    border-bottom: ${(props) => variants[props.size].borderWidth} solid black;
+    padding-left: ${(props) => variants[props.size].paddingLeft};
+    padding-bottom: ${(props) => variants[props.size].paddingBottom};
 
     font-size: inherit;
     font-weight: 700;
 
     color: ${COLORS.gray700};
 
-    border-bottom: ${(props) => variants[props.size].borderWidth} solid black;
-    padding-left: ${(props) => variants[props.size].paddingLeft};
-    padding-bottom: ${(props) => variants[props.size].paddingBottom};
+    &:hover {
+      color: black;
+    }
 
     &::placeholder {
       font-size: inherit;
