@@ -13,6 +13,7 @@ const variants = {
     borderWidth: '1px',
     paddingLeft: '1.5rem',
     paddingBottom: '0.25rem',
+    strokeWidth: 1,
   },
   large: {
     iconSize: '1.5rem',
@@ -20,6 +21,7 @@ const variants = {
     borderWidth: '2px',
     paddingLeft: '2.25rem',
     paddingBottom: '0.5rem',
+    strokeWidth: 2,
   },
 };
 
@@ -67,7 +69,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   return (
     <Wrapper size={size} width={width}>
       <VisuallyHidden>{label}</VisuallyHidden>
-      <Icon id={icon} />
+      <Icon id={icon} strokeWidth={variants[size].strokeWidth} />
       <input type="text" placeholder={placeholder} />
     </Wrapper>
   );
