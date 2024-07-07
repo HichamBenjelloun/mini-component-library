@@ -62,6 +62,10 @@ const Wrapper = styled.label`
       font-weight: 400;
       color: ${COLORS.gray500};
     }
+
+    &::-moz-placeholder {
+      opacity: 1;
+    }
   }
 `;
 
@@ -69,8 +73,8 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
   return (
     <Wrapper size={size} width={width}>
       <VisuallyHidden>{label}</VisuallyHidden>
-      <Icon id={icon} strokeWidth={variants[size].strokeWidth} />
       <input type="text" placeholder={placeholder} />
+      <Icon id={icon} strokeWidth={variants[size].strokeWidth} />
     </Wrapper>
   );
 };
